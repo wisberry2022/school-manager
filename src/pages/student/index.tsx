@@ -9,6 +9,11 @@ const gradeInit = async () => {
   await axiosInstance.post("/api/v0/grade");
 }
 
+const getGrade = async () => {
+  const response = await axiosInstance.get("/api/v0/grade");
+  console.log(response);
+}
+
 const Student: FC = () => {
   const theme = useTheme();
   const [isInited, setInit] = useState<boolean>(false);
@@ -17,6 +22,9 @@ const Student: FC = () => {
     gradeInit();
   }
 
+  useEffect(() => {
+
+  }, [])
 
   return (
     <FlexBox>
