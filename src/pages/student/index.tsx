@@ -23,7 +23,10 @@ const Student: FC = () => {
   }
 
   useEffect(() => {
-
+    (async() => {
+      const response = await axiosInstance.get("/api/v0/grade");
+      console.log("data",  response);
+    })();
   }, [])
 
   return (
