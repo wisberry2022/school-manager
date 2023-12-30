@@ -1,6 +1,14 @@
-import '@/styles/globals.css'
+import { CustomTheme } from '@/theme/CustomTheme'
 import type { AppProps } from 'next/app'
+import '../assets/reset.css';
+import { Layout } from '@/component/layout/layout';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <CustomTheme>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CustomTheme>
+  )
 }
